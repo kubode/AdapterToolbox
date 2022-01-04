@@ -1,6 +1,6 @@
 package net.cattaka.android.adaptertoolbox.example.test;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.view.View;
 
 import net.cattaka.android.adaptertoolbox.example.logic.SnackbarLogic;

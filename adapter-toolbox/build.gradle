@@ -7,7 +7,7 @@ android {
     compileSdkVersion 31
 
     defaultConfig {
-        minSdkVersion 15
+        minSdkVersion 23
         targetSdkVersion 31
     }
     buildTypes {
@@ -22,17 +22,5 @@ android {
 }
 
 dependencies {
-    compileOnly fileTree(dir: 'libs', include: ['*.jar'])
-    compileOnly 'com.android.support:recyclerview-v7:25.1.0'
-
-    androidTestCompileOnly('com.android.support.test.espresso:espresso-core:2.2.1') {
-        exclude module: 'support-annotations'
-    }
-    androidTestCompileOnly('com.android.support.test.espresso:espresso-contrib:2.2.1') {
-        exclude group: 'com.android.support', module: 'appcompat'
-        exclude group: 'com.android.support', module: 'support-v4'
-        exclude group: 'com.android.support', module: 'design'
-        exclude module: 'recyclerview-v7'
-        exclude module: 'support-annotations'
-    }
+    compileOnly 'androidx.recyclerview:recyclerview:1.2.1'
 }

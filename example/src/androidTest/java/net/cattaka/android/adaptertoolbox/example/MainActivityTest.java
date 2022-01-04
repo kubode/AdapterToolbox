@@ -1,8 +1,8 @@
 package net.cattaka.android.adaptertoolbox.example;
 
 import android.app.Activity;
-import android.support.test.InstrumentationRegistry;
-import android.support.test.rule.ActivityTestRule;
+import androidx.test.platform.app.InstrumentationRegistry;
+import androidx.test.rule.ActivityTestRule;
 
 import net.cattaka.android.adaptertoolbox.example.data.ActivityEntry;
 
@@ -12,11 +12,11 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static android.support.test.espresso.Espresso.onView;
-import static android.support.test.espresso.action.ViewActions.click;
-import static android.support.test.espresso.contrib.RecyclerViewActions.actionOnItemAtPosition;
-import static android.support.test.espresso.contrib.RecyclerViewActions.scrollToPosition;
-import static android.support.test.espresso.matcher.ViewMatchers.withId;
+import static androidx.test.espresso.Espresso.onView;
+import static androidx.test.espresso.action.ViewActions.click;
+import static androidx.test.espresso.contrib.RecyclerViewActions.actionOnItemAtPosition;
+import static androidx.test.espresso.contrib.RecyclerViewActions.scrollToPosition;
+import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static net.cattaka.android.adaptertoolbox.example.test.TestUtils.monitorActivity;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.notNullValue;
