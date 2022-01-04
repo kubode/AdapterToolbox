@@ -21,24 +21,13 @@ This is utility classes for RecyclerView and classic AdapterView(such as ListVie
   - This supports single choice and multi choice mode.
 
 
-## How to use
-Add folloing lines to build.gradle
+## How to install on your local
 
-```groovy
-repositories {
-    maven {
-        url "http://dl.bintray.com/cattaka/maven"
-    }
-}
-
-dependencies {
-    compile 'net.cattaka:adapter-toolbox:$VERSION@aar'
-}
+```sh
+./gradlew publishToMavenLocal
 ```
 
-Put $VERSION that you want to use.
-You can check available versions here. https://bintray.com/cattaka/maven/adapter-toolbox/view
-
+Then copy `~/.m2/repository/net/cattaka/adapter-toolbox` to your local project.
 
 ## Examples
 
