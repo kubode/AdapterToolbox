@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                                 xmlns:tools="http://schemas.android.com/tools"
-                                                 android:layout_width="match_parent"
-                                                 android:layout_height="match_parent"
-                                                 android:orientation="vertical"
-                                                 android:paddingBottom="@dimen/activity_vertical_margin"
-                                                 android:paddingLeft="@dimen/activity_horizontal_margin"
-                                                 android:paddingRight="@dimen/activity_horizontal_margin"
-                                                 android:paddingTop="@dimen/activity_vertical_margin"
-                                                 tools:context="net.cattaka.android.adaptertoolbox.example.CodeLabelExampleActivity">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="net.cattaka.android.adaptertoolbox.example.CodeLabelExampleActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,20 +20,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:checked="true"
-            android:text="Enable Fizz"/>
+            android:text="Enable Fizz" />
 
         <CheckBox
             android:id="@+id/check_buzz"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:checked="true"
-            android:text="Enable Buzz"/>
+            android:text="Enable Buzz" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"/>
+            android:layout_weight="1" />
 
     </LinearLayout>
 
