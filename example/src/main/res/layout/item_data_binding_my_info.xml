@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    >
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
 
         <variable
             name="myInfo"
-            type="net.cattaka.android.adaptertoolbox.example.data.ObservableMyInfo"/>
+            type="net.cattaka.android.adaptertoolbox.example.data.ObservableMyInfo" />
 
         <variable
             name="holder"
-            type="net.cattaka.android.adaptertoolbox.example.adapter.factory.DataBindingMyInfoViewHolderFactory.ViewHolder"/>
+            type="net.cattaka.android.adaptertoolbox.example.adapter.factory.DataBindingMyInfoViewHolderFactory.ViewHolder" />
     </data>
 
     <androidx.cardview.widget.CardView
@@ -34,7 +32,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="IntValue"
-                    android:textAppearance="?android:textAppearanceLarge"/>
+                    android:textAppearance="?android:textAppearanceLarge" />
 
                 <SeekBar
                     android:id="@+id/seek_int_value"
@@ -44,7 +42,7 @@
                     android:layout_weight="1"
                     android:max="100"
                     android:onProgressChanged="@{holder::onProgressChanged}"
-                    android:progress="@{myInfo.intValue}"/>
+                    android:progress="@{myInfo.intValue}" />
             </TableRow>
 
             <TableRow
@@ -55,7 +53,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="OrdinalLabel"
-                    android:textAppearance="?android:textAppearanceLarge"/>
+                    android:textAppearance="?android:textAppearanceLarge" />
 
                 <net.cattaka.android.adaptertoolbox.example.view.SpinnerEx
                     android:id="@+id/spinner_ordinal_label"
@@ -64,7 +62,7 @@
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:onItemSelected="@{holder::onItemSelected}"
-                    android:selectedItem="@{myInfo.ordinalLabel}"/>
+                    android:selectedItem="@{myInfo.ordinalLabel}" />
             </TableRow>
 
             <TableRow
@@ -75,7 +73,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Checked"
-                    android:textAppearance="?android:textAppearanceLarge"/>
+                    android:textAppearance="?android:textAppearanceLarge" />
 
                 <Switch
                     android:id="@+id/switch_checked"
@@ -84,7 +82,7 @@
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:checked="@{myInfo.checked}"
-                    android:onCheckedChanged="@{holder::onCheckedChanged}"/>
+                    android:onCheckedChanged="@{holder::onCheckedChanged}" />
             </TableRow>
 
         </TableLayout>
