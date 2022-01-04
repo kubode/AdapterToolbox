@@ -1,20 +1,14 @@
-import java.text.DateFormat
-import java.text.SimpleDateFormat
-
 group = 'net.cattaka'
 version = '0.6.0'
 
 apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
-apply plugin: 'com.jfrog.bintray'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion '28.0.2'
+    compileSdkVersion 31
 
     defaultConfig {
         minSdkVersion 15
-        targetSdkVersion 25
+        targetSdkVersion 31
     }
     buildTypes {
         release {
@@ -26,108 +20,6 @@ android {
         enabled false
     }
 }
-
-def desc = 'ScrambleAdapter and CustomRecyclerAdapter'
-def artifactId = "adapter-toolbox"
-def projectId = "adapter-toolbox"
-def projectName = 'Adapter Toolbox'
-def siteUrl = 'https://github.com/cattaka/AdapterToolbox'
-def gitUrl = 'https://github.com/cattaka/AdapterToolbox.git'
-def issueUrl = 'https://github.com/cattaka/AdapterToolbox/issues'
-def projectDesc = 'ScrambleAdapter and CustomRecyclerAdapter'
-def artifactVersion = version
-
-install {
-    repositories.mavenInstaller {
-        // This generates POM.xml with proper parameters
-        pom {
-            project {
-                packaging 'aar'
-
-                // Add your description here
-                name projectName
-                url siteUrl
-
-                // Set your license
-                licenses {
-                    license {
-                        name 'The Apache Software License, Version 2.0'
-                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-                    }
-                }
-                developers {
-                    developer {
-                        id 'cattaka'
-                        name 'Takao Sumitomo'
-                        email 'cattaka@mail.cattaka.net'
-                    }
-                }
-                scm {
-                    connection gitUrl
-                    developerConnection gitUrl
-                    url siteUrl
-                }
-            }
-        }
-    }
-}
-
-bintray {
-    user = System.env['BINTRAY_USER']
-    key = System.env['BINTRAY_APIKEY']
-
-    configurations = ['archives'] //When uploading configuration files
-
-    pkg {
-        repo = 'maven'
-        name = projectId
-        licenses = ['Apache-2.0']
-        desc = projectDesc
-        websiteUrl = siteUrl
-        issueTrackerUrl = issueUrl
-        vcsUrl = gitUrl
-        licenses = ['Apache-2.0']
-        labels = ['aar', 'android']
-        publicDownloadNumbers = true
-        version {
-            name = artifactVersion
-            desc = desc
-            released = toIsoDateFormat(new Date())
-            vcsTag = "v" + artifactVersion
-            // attributes = []
-        }
-    }
-}
-
-task sourcesJar(type: Jar) {
-    from android.sourceSets.main.java.srcDirs
-    classifier = 'sources'
-}
-
-task javadoc(type: Javadoc) {
-    source = android.sourceSets.main.java.srcDirs
-    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
-}
-
-//task javadocJar(type: Jar, dependsOn: javadoc) {
-//    classifier = 'javadoc'
-//    from javadoc.destinationDir
-//}
-artifacts {
-//    archives javadocJar
-    archives sourcesJar
-}
-
-//publishing {
-//    publications {
-//        MyPublication(MavenPublication) {
-//            from components.java
-//            groupId group
-//            artifactId artifactId
-//            version version
-//        }
-//    }
-//}
 
 dependencies {
     compileOnly fileTree(dir: 'libs', include: ['*.jar'])
@@ -143,9 +35,4 @@ dependencies {
         exclude module: 'recyclerview-v7'
         exclude module: 'support-annotations'
     }
-}
-
-def toIsoDateFormat(Date date) {
-    DateFormat isoFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZZ")
-    return isoFormat.format(date)
 }
