@@ -110,7 +110,7 @@ public class MultiChoosableTreeItemAdapterExampleActivityTest {
             onView(withId(R.id.button_ok)).perform(click());
             verify(activity.mSnackbarLogic).make(
                     any(View.class),
-                    argThat(allOf(containsString(item3.getText()), containsString(item5.getText()))),
+                    argThat(string -> allOf(containsString(item3.getText()), containsString(item5.getText())).matches(string)),
                     anyInt());
         }
     }

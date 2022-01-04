@@ -111,7 +111,7 @@ public class SingleChoosableTreeItemAdapterExampleActivityTest {
             onView(withId(R.id.button_ok)).perform(click());
             verify(activity.mSnackbarLogic).make(
                     any(View.class),
-                    argThat(allOf(not(containsString(item3.getText())), containsString(item5.getText()))),
+                    argThat(string -> allOf(not(containsString(item3.getText())), containsString(item5.getText())).matches(string)),
                     anyInt());
         }
     }

@@ -42,7 +42,7 @@ public class RecyclerViewHeaderExampleActivityTest {
             onView(withId(R.id.recycler)).perform(scrollToPosition(globalPosition));
             onView(withIdInRecyclerView(R.id.view_header, R.id.recycler, globalPosition)).perform(click());
 
-            verify(activity.mSnackbarLogic).make(any(View.class), argThat(containsString("Header")), anyInt());
+            verify(activity.mSnackbarLogic).make(any(View.class), argThat(string -> containsString("Header").matches(string)), anyInt());
         }
         {
             int position = 3;
@@ -58,7 +58,7 @@ public class RecyclerViewHeaderExampleActivityTest {
             onView(withId(R.id.recycler)).perform(scrollToPosition(globalPosition));
             onView(withIdInRecyclerView(R.id.view_footer, R.id.recycler, globalPosition)).perform(click());
 
-            verify(activity.mSnackbarLogic).make(any(View.class), argThat(containsString("Footer")), anyInt());
+            verify(activity.mSnackbarLogic).make(any(View.class), argThat(string -> containsString("Footer").matches(string)), anyInt());
         }
     }
 }

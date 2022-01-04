@@ -64,7 +64,7 @@ public class SimpleStringExampleActivityTest {
 
             verify(mActivity.mSnackbarLogic).make(
                     any(View.class),
-                    argThat(containsString(String.valueOf(entry.object))),
+                    argThat(string -> containsString(String.valueOf(entry.object)).matches(string)),
                     anyInt()
             );
         }

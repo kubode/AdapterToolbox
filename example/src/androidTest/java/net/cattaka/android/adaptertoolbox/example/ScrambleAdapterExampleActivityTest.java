@@ -66,7 +66,7 @@ public class ScrambleAdapterExampleActivityTest {
 
         verify(mActivity.mSnackbarLogic).make(
                 any(View.class),
-                argThat(allOf(containsString("Number"), containsString(String.valueOf(entry.object)))),
+                argThat(string -> allOf(containsString("Number"), containsString(String.valueOf(entry.object))).matches(string)),
                 anyInt()
         );
     }
@@ -79,7 +79,7 @@ public class ScrambleAdapterExampleActivityTest {
 
         verify(mActivity.mSnackbarLogic).make(
                 any(View.class),
-                argThat(allOf(containsString("String"), containsString(String.valueOf(entry.object)))),
+                argThat(string -> allOf(containsString("String"), containsString(String.valueOf(entry.object))).matches(string)),
                 anyInt()
         );
     }
@@ -94,11 +94,11 @@ public class ScrambleAdapterExampleActivityTest {
             Resources res = mActivity.getResources();
             verify(mActivity.mSnackbarLogic).make(
                     any(View.class),
-                    argThat(allOf(
+                    argThat(string -> allOf(
                             containsString("code of "),
                             containsString(String.valueOf(entry.object.getCode())),
                             containsString(String.valueOf(entry.object.getLabel(res)))
-                    )),
+                    ).matches(string)),
                     anyInt()
             );
         }
@@ -110,11 +110,11 @@ public class ScrambleAdapterExampleActivityTest {
             Resources res = mActivity.getResources();
             verify(mActivity.mSnackbarLogic).make(
                     any(View.class),
-                    argThat(allOf(
+                    argThat(string -> allOf(
                             containsString("code of "),
                             containsString(String.valueOf(entry.object.getCode())),
                             containsString(String.valueOf(entry.object.getLabel(res)))
-                    )),
+                    ).matches(string)),
                     anyInt()
             );
         }

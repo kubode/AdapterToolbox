@@ -43,7 +43,7 @@ public class MultiAdapterExampleActivityTest {
             onView(withId(R.id.recycler)).perform(scrollToPosition(globalPosition));
             onView(withIdInRecyclerView(R.id.view_header, R.id.recycler, globalPosition)).perform(click());
 
-            verify(activity.mSnackbarLogic).make(any(View.class), argThat(allOf(containsString("Strings"), containsString("Header"))), anyInt());
+            verify(activity.mSnackbarLogic).make(any(View.class), argThat(string -> allOf(containsString("Strings"), containsString("Header")).matches(string)), anyInt());
         }
         {
             int position = 3;
@@ -59,7 +59,7 @@ public class MultiAdapterExampleActivityTest {
             onView(withId(R.id.recycler)).perform(scrollToPosition(globalPosition));
             onView(withIdInRecyclerView(R.id.view_header, R.id.recycler, globalPosition)).perform(click());
 
-            verify(activity.mSnackbarLogic).make(any(View.class), argThat(allOf(containsString("Numbers"), containsString("Header"))), anyInt());
+            verify(activity.mSnackbarLogic).make(any(View.class), argThat(string -> allOf(containsString("Numbers"), containsString("Header")).matches(string)), anyInt());
         }
         {
             int position = 4;

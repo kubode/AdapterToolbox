@@ -13,6 +13,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
+import org.mockito.ArgumentMatchers;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
@@ -22,6 +23,7 @@ import static net.cattaka.android.adaptertoolbox.example.test.TestUtils.find;
 import static net.cattaka.android.adaptertoolbox.example.test.TestUtils.waitForIdlingResource;
 import static net.cattaka.android.adaptertoolbox.example.test.TestUtils.withIdInRecyclerView;
 import static org.hamcrest.Matchers.containsString;
+import static org.mockito.ArgumentMatchers.contains;
 import static org.mockito.Matchers.any;
 import static org.mockito.Matchers.anyInt;
 import static org.mockito.Matchers.argThat;
@@ -92,7 +94,7 @@ public class TreeItemAdapterExampleActivityTest {
 
             verify(activity.mSnackbarLogic).make(
                     any(View.class),
-                    argThat(containsString(item.getText())),
+                    argThat(string -> containsString(item.getText()).matches(string)),
                     anyInt());
         }
     }

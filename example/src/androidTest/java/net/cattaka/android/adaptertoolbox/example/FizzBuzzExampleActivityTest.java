@@ -40,7 +40,7 @@ public class FizzBuzzExampleActivityTest {
             onView(withId(R.id.recycler)).perform(scrollToPosition(position));
             onView(withIdInRecyclerView(R.id.text, R.id.recycler, position)).perform(click());
 
-            verify(activity.mSnackbarLogic).make(any(View.class), argThat(allOf(containsString("Integer "), containsString(String.valueOf(target)))), anyInt());
+            verify(activity.mSnackbarLogic).make(any(View.class), argThat(string -> allOf(containsString("Integer "), containsString(String.valueOf(target))).matches(string)), anyInt());
         }
         {   // Click Fizz
             int target = 3;
@@ -48,7 +48,7 @@ public class FizzBuzzExampleActivityTest {
             onView(withId(R.id.recycler)).perform(scrollToPosition(position));
             onView(withIdInRecyclerView(R.id.text, R.id.recycler, position)).perform(click());
 
-            verify(activity.mSnackbarLogic).make(any(View.class), argThat(allOf(containsString("Fizz "), containsString(String.valueOf(target)))), anyInt());
+            verify(activity.mSnackbarLogic).make(any(View.class), argThat(string -> allOf(containsString("Fizz "), containsString(String.valueOf(target))).matches(string)), anyInt());
         }
         {   // Click Buzz
             int target = 5;
@@ -56,7 +56,7 @@ public class FizzBuzzExampleActivityTest {
             onView(withId(R.id.recycler)).perform(scrollToPosition(position));
             onView(withIdInRecyclerView(R.id.text, R.id.recycler, position)).perform(click());
 
-            verify(activity.mSnackbarLogic).make(any(View.class), argThat(allOf(containsString("Buzz "), containsString(String.valueOf(target)))), anyInt());
+            verify(activity.mSnackbarLogic).make(any(View.class), argThat(string -> allOf(containsString("Buzz "), containsString(String.valueOf(target))).matches(string)), anyInt());
         }
         {   // Click FizzBuzz
             int target = 15;
@@ -64,7 +64,7 @@ public class FizzBuzzExampleActivityTest {
             onView(withId(R.id.recycler)).perform(scrollToPosition(position));
             onView(withIdInRecyclerView(R.id.text, R.id.recycler, position)).perform(click());
 
-            verify(activity.mSnackbarLogic).make(any(View.class), argThat(allOf(containsString("FizzBuzz "), containsString(String.valueOf(target)))), anyInt());
+            verify(activity.mSnackbarLogic).make(any(View.class), argThat(string -> allOf(containsString("FizzBuzz "), containsString(String.valueOf(target))).matches(string)), anyInt());
         }
     }
 
@@ -83,7 +83,7 @@ public class FizzBuzzExampleActivityTest {
             onView(withId(R.id.recycler)).perform(scrollToPosition(position));
             onView(withIdInRecyclerView(R.id.text, R.id.recycler, position)).perform(click());
 
-            verify(activity.mSnackbarLogic).make(any(View.class), argThat(allOf(containsString("Integer "), containsString(String.valueOf(target)))), anyInt());
+            verify(activity.mSnackbarLogic).make(any(View.class), argThat(string -> allOf(containsString("Integer "), containsString(String.valueOf(target))).matches(string)), anyInt());
         }
         {   // Click Fizz
             int target = 3;
@@ -91,7 +91,7 @@ public class FizzBuzzExampleActivityTest {
             onView(withId(R.id.recycler)).perform(scrollToPosition(position));
             onView(withIdInRecyclerView(R.id.text, R.id.recycler, position)).perform(click());
 
-            verify(activity.mSnackbarLogic).make(any(View.class), argThat(allOf(containsString("Fizz "), containsString(String.valueOf(target)))), anyInt());
+            verify(activity.mSnackbarLogic).make(any(View.class), argThat(string -> allOf(containsString("Fizz "), containsString(String.valueOf(target))).matches(string)), anyInt());
         }
         {   // Click Integer
             int target = 5;
@@ -99,7 +99,7 @@ public class FizzBuzzExampleActivityTest {
             onView(withId(R.id.recycler)).perform(scrollToPosition(position));
             onView(withIdInRecyclerView(R.id.text, R.id.recycler, position)).perform(click());
 
-            verify(activity.mSnackbarLogic).make(any(View.class), argThat(allOf(containsString("Integer "), containsString(String.valueOf(target)))), anyInt());
+            verify(activity.mSnackbarLogic).make(any(View.class), argThat(string -> allOf(containsString("Integer "), containsString(String.valueOf(target))).matches(string)), anyInt());
         }
         {   // Click Fizz
             int target = 15;
@@ -107,7 +107,7 @@ public class FizzBuzzExampleActivityTest {
             onView(withId(R.id.recycler)).perform(scrollToPosition(position));
             onView(withIdInRecyclerView(R.id.text, R.id.recycler, position)).perform(click());
 
-            verify(activity.mSnackbarLogic).make(any(View.class), argThat(allOf(containsString("Fizz "), containsString(String.valueOf(target)))), anyInt());
+            verify(activity.mSnackbarLogic).make(any(View.class), argThat(string -> allOf(containsString("Fizz "), containsString(String.valueOf(target))).matches(string)), anyInt());
         }
     }
 
@@ -126,7 +126,7 @@ public class FizzBuzzExampleActivityTest {
             onView(withId(R.id.recycler)).perform(scrollToPosition(position));
             onView(withIdInRecyclerView(R.id.text, R.id.recycler, position)).perform(click());
 
-            verify(activity.mSnackbarLogic).make(any(View.class), argThat(allOf(containsString("Integer "), containsString(String.valueOf(target)))), anyInt());
+            verify(activity.mSnackbarLogic).make(any(View.class), argThat(string -> allOf(containsString("Integer "), containsString(String.valueOf(target))).matches(string)), anyInt());
         }
         {   // Click Integer
             int target = 3;
@@ -134,7 +134,7 @@ public class FizzBuzzExampleActivityTest {
             onView(withId(R.id.recycler)).perform(scrollToPosition(position));
             onView(withIdInRecyclerView(R.id.text, R.id.recycler, position)).perform(click());
 
-            verify(activity.mSnackbarLogic).make(any(View.class), argThat(allOf(containsString("Integer "), containsString(String.valueOf(target)))), anyInt());
+            verify(activity.mSnackbarLogic).make(any(View.class), argThat(string -> allOf(containsString("Integer "), containsString(String.valueOf(target))).matches(string)), anyInt());
         }
         {   // Click Buzz
             int target = 5;
@@ -142,7 +142,7 @@ public class FizzBuzzExampleActivityTest {
             onView(withId(R.id.recycler)).perform(scrollToPosition(position));
             onView(withIdInRecyclerView(R.id.text, R.id.recycler, position)).perform(click());
 
-            verify(activity.mSnackbarLogic).make(any(View.class), argThat(allOf(containsString("Buzz "), containsString(String.valueOf(target)))), anyInt());
+            verify(activity.mSnackbarLogic).make(any(View.class), argThat(string -> allOf(containsString("Buzz "), containsString(String.valueOf(target))).matches(string)), anyInt());
         }
         {   // Click Buzz
             int target = 15;
@@ -150,7 +150,7 @@ public class FizzBuzzExampleActivityTest {
             onView(withId(R.id.recycler)).perform(scrollToPosition(position));
             onView(withIdInRecyclerView(R.id.text, R.id.recycler, position)).perform(click());
 
-            verify(activity.mSnackbarLogic).make(any(View.class), argThat(allOf(containsString("Buzz "), containsString(String.valueOf(target)))), anyInt());
+            verify(activity.mSnackbarLogic).make(any(View.class), argThat(string -> allOf(containsString("Buzz "), containsString(String.valueOf(target))).matches(string)), anyInt());
         }
     }
 
@@ -170,7 +170,7 @@ public class FizzBuzzExampleActivityTest {
             onView(withId(R.id.recycler)).perform(scrollToPosition(position));
             onView(withIdInRecyclerView(R.id.text, R.id.recycler, position)).perform(click());
 
-            verify(activity.mSnackbarLogic).make(any(View.class), argThat(allOf(containsString("Integer "), containsString(String.valueOf(target)))), anyInt());
+            verify(activity.mSnackbarLogic).make(any(View.class), argThat(string -> allOf(containsString("Integer "), containsString(String.valueOf(target))).matches(string)), anyInt());
         }
         {   // Click Integer
             int target = 3;
@@ -178,7 +178,7 @@ public class FizzBuzzExampleActivityTest {
             onView(withId(R.id.recycler)).perform(scrollToPosition(position));
             onView(withIdInRecyclerView(R.id.text, R.id.recycler, position)).perform(click());
 
-            verify(activity.mSnackbarLogic).make(any(View.class), argThat(allOf(containsString("Integer "), containsString(String.valueOf(target)))), anyInt());
+            verify(activity.mSnackbarLogic).make(any(View.class), argThat(string -> allOf(containsString("Integer "), containsString(String.valueOf(target))).matches(string)), anyInt());
         }
         {   // Click Integer
             int target = 5;
@@ -186,7 +186,7 @@ public class FizzBuzzExampleActivityTest {
             onView(withId(R.id.recycler)).perform(scrollToPosition(position));
             onView(withIdInRecyclerView(R.id.text, R.id.recycler, position)).perform(click());
 
-            verify(activity.mSnackbarLogic).make(any(View.class), argThat(allOf(containsString("Integer "), containsString(String.valueOf(target)))), anyInt());
+            verify(activity.mSnackbarLogic).make(any(View.class), argThat(string -> allOf(containsString("Integer "), containsString(String.valueOf(target))).matches(string)), anyInt());
         }
         {   // Click Integer
             int target = 15;
@@ -194,7 +194,7 @@ public class FizzBuzzExampleActivityTest {
             onView(withId(R.id.recycler)).perform(scrollToPosition(position));
             onView(withIdInRecyclerView(R.id.text, R.id.recycler, position)).perform(click());
 
-            verify(activity.mSnackbarLogic).make(any(View.class), argThat(allOf(containsString("Integer "), containsString(String.valueOf(target)))), anyInt());
+            verify(activity.mSnackbarLogic).make(any(View.class), argThat(string -> allOf(containsString("Integer "), containsString(String.valueOf(target))).matches(string)), anyInt());
         }
     }
 }

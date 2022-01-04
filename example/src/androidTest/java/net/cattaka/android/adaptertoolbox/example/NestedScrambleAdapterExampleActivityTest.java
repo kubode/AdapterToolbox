@@ -14,6 +14,7 @@ import net.cattaka.android.adaptertoolbox.example.test.TestUtils.Entry;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
+import org.mockito.ArgumentMatchers;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
@@ -71,7 +72,7 @@ public class NestedScrambleAdapterExampleActivityTest {
 
             verify(mActivity.mSnackbarLogic).make(
                     any(View.class),
-                    argThat(allOf(containsString("Row=" + parentPosition), containsString(String.valueOf(entry.object)))),
+                    argThat(string -> allOf(containsString("Row=" + parentPosition), containsString(String.valueOf(entry.object))).matches(string)),
                     anyInt()
             );
         }
@@ -93,7 +94,7 @@ public class NestedScrambleAdapterExampleActivityTest {
 
             verify(mActivity.mSnackbarLogic).make(
                     any(View.class),
-                    argThat(allOf(containsString("Row=" + parentPosition), containsString(String.valueOf(entry.object)))),
+                    argThat(string -> allOf(containsString("Row=" + parentPosition), containsString(String.valueOf(entry.object))).matches(string)),
                     anyInt()
             );
         }
@@ -116,12 +117,12 @@ public class NestedScrambleAdapterExampleActivityTest {
             Resources res = mActivity.getResources();
             verify(mActivity.mSnackbarLogic).make(
                     any(View.class),
-                    argThat(allOf(
+                    argThat(string -> allOf(
                             containsString("Row=" + parentPosition),
                             containsString("code of "),
                             containsString(String.valueOf(entry.object.getCode())),
                             containsString(String.valueOf(entry.object.getLabel(res)))
-                    )),
+                    ).matches(string)),
                     anyInt()
             );
         }
@@ -136,12 +137,12 @@ public class NestedScrambleAdapterExampleActivityTest {
             Resources res = mActivity.getResources();
             verify(mActivity.mSnackbarLogic).make(
                     any(View.class),
-                    argThat(allOf(
+                    argThat(string -> allOf(
                             containsString("Row=" + parentPosition),
                             containsString("label of "),
                             containsString(String.valueOf(entry.object.getCode())),
                             containsString(String.valueOf(entry.object.getLabel(res)))
-                    )),
+                    ).matches(string)),
                     anyInt()
             );
         }

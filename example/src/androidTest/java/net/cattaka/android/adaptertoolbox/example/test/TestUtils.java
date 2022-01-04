@@ -75,7 +75,7 @@ public class TestUtils {
             public void describeTo(Description description) {
                 String resName = String.valueOf(recyclerViewId);
                 try {
-                    resName = InstrumentationRegistry.getTargetContext().getResources().getResourceEntryName(recyclerViewId);
+                    resName = InstrumentationRegistry.getInstrumentation().getTargetContext().getResources().getResourceEntryName(recyclerViewId);
                 } catch (Resources.NotFoundException e) {
                     // ignore
                 }
@@ -119,7 +119,7 @@ public class TestUtils {
             public void describeTo(Description description) {
                 String resName = String.valueOf(adapterViewId);
                 try {
-                    resName = InstrumentationRegistry.getTargetContext().getResources().getResourceEntryName(adapterViewId);
+                    resName = InstrumentationRegistry.getInstrumentation().getTargetContext().getResources().getResourceEntryName(adapterViewId);
                 } catch (Resources.NotFoundException e) {
                     // ignore
                 }

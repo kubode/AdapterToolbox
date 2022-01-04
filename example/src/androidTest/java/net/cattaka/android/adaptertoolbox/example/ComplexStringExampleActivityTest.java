@@ -41,15 +41,15 @@ public class ComplexStringExampleActivityTest {
             onView(withId(R.id.recycler)).perform(scrollToPosition(i));
             {
                 onView(TestUtils.withIdInRecyclerView(R.id.text, R.id.recycler, i)).perform(click());
-                verify(activity.mSnackbarLogic).make(any(View.class), argThat(allOf(containsString(item.object), containsString("(Text)"))), anyInt());
+                verify(activity.mSnackbarLogic).make(any(View.class), argThat(string -> allOf(containsString(item.object), containsString("(Text)")).matches(string)), anyInt());
             }
             {
                 onView(TestUtils.withIdInRecyclerView(R.id.button_a, R.id.recycler, i)).perform(click());
-                verify(activity.mSnackbarLogic).make(any(View.class), argThat(allOf(containsString(item.object), containsString("(A)"))), anyInt());
+                verify(activity.mSnackbarLogic).make(any(View.class), argThat(string -> allOf(containsString(item.object), containsString("(A)")).matches(string)), anyInt());
             }
             {
                 onView(TestUtils.withIdInRecyclerView(R.id.button_b, R.id.recycler, i)).perform(click());
-                verify(activity.mSnackbarLogic).make(any(View.class), argThat(allOf(containsString(item.object), containsString("(B)"))), anyInt());
+                verify(activity.mSnackbarLogic).make(any(View.class), argThat(string -> allOf(containsString(item.object), containsString("(B)")).matches(string)), anyInt());
             }
         }
     }
